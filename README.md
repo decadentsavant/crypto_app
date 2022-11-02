@@ -1,16 +1,13 @@
-# crypto_app
+# Coin Watcher 🪙
 
-A new Flutter project.
+### Crypto App 🔥
 
-## Getting Started
+This application utilizes bloc, fetches data from a remote API, and displays the current prices of various coins.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+#### Learnings 🎯
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Reading API documentation
+2. Fetching data
+3. Managing async events via try/catch and handling 'onData', 'onError', and 'loading' states
