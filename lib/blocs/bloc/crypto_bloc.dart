@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:crypto_app/model/currency.dart';
+import 'package:crypto_app/model/crypto_currency.dart';
 import 'package:crypto_app/model/data_error.dart';
 import 'package:crypto_app/services/data_repo.dart';
 import 'package:equatable/equatable.dart';
@@ -12,15 +12,16 @@ class CryptoBloc extends Bloc<CryptoEvent, CryptoState> {
       : _cryptoRepository = cryptoRepository,
         super(CryptoState.start()) {
     on<Start>((event, emit) => _start(emit));
-    on<RefreshCoins>((event, emit) => _getCoins(emit));
+    on<RefreshCoins>((event, emit) => _refreshCoins(emit));
   }
+  final CryptoRepository _cryptoRepository;
 
   Future<CryptoState> _start(Emitter<CryptoState> emit) async {
     state.copyWith(status: Status.loading);
-    return _getCoins(emit);
+    return _refreshCoins(emit);
   }
 
-  Future<CryptoState> _getCoins(Emitter<CryptoState> emit) async {
+  Future<CryptoState> _refreshCoins(Emitter<CryptoState> emit) async {
     try {
       final coins = await _cryptoRepository.getCurrencies();
       emit(state.copyWith(coins: coins, status: Status.loaded));
@@ -35,6 +36,4 @@ class CryptoBloc extends Bloc<CryptoEvent, CryptoState> {
     return state;
     }
   }
-
-  final CryptoRepository _cryptoRepository;
 }
