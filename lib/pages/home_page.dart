@@ -14,9 +14,8 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: false,
         title: const Text('Crypto Watcher'),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.purple.shade900,
       ),
       body: DecoratedBox(
         decoration: BoxDecoration(
@@ -25,7 +24,7 @@ class HomePageState extends State<HomePage> {
             end: Alignment.bottomCenter,
             colors: [
               Theme.of(context).primaryColor,
-              Colors.black,
+            Colors.deepPurple,
             ],
           ),
         ),
