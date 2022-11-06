@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:crypto_app/model/currency.dart';
+import 'package:crypto_app/model/crypto_currency.dart';
 import 'package:http/http.dart' as http;
 
 class CryptoRepository {
